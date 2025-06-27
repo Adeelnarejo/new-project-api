@@ -3,10 +3,11 @@ import send_email
 
 
 # api key
-api_key = "c25984fdf8c340b3b2c773ecb9dcffff"
-
-url = ("https://newsapi.org/v2/everything?q=tesla&from=2025-05-27&sortBy=publishedAt&apiKey"
-       "=c25984fdf8c340b3b2c773ecb9dcffff")
+api_key = "your api key"
+topic = "tesla"
+lang = "en"
+url = f"https://newsapi.org/v2/everything?q={topic}&" \
+      f"sortBy=publishedAt&apiKey={api_key}&language={lang}"
 
 request = requests.get(url)
 content = request.json()
@@ -15,10 +16,11 @@ user_email = "adeel.nariai96@gmail.com"
 
 body = ""
 
-for article in content["articles"]:
+for article in content["articles"][:20]:
     title = article["title"] or "No Title"
     description = article["description"] or "No Description"
-    body += title + "\n" + description + "\n\n"
+    news_url = article["url"] or "No url"
+    body += "Subject: Today`s news" + "\n" + title + "\n" + description + "\n\n" + news_url + "\n\n"
 
 
 body = body.encode("utf-8")
