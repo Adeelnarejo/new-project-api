@@ -3,7 +3,7 @@ import send_email
 
 
 # api key
-api_key = "your api key"
+api_key = "c25984fdf8c340b3b2c773ecb9dcffff"
 topic = "tesla"
 lang = "en"
 url = f"https://newsapi.org/v2/everything?q={topic}&" \
