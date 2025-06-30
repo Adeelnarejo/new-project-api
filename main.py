@@ -3,7 +3,7 @@ import send_email
 
 
 # api key
-api_key = "c25984fdf8c340b3b2c773ecb9dcffff"
+api_key = "###"
 topic = "tesla"
 lang = "en"
 url = f"https://newsapi.org/v2/everything?q={topic}&" \
@@ -12,7 +12,7 @@ url = f"https://newsapi.org/v2/everything?q={topic}&" \
 request = requests.get(url)
 content = request.json()
 
-user_email = "adeel.nariai96@gmail.com"
+user_email = "####"
 
 body = ""
 
